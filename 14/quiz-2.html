@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>연습문제 2</title>
+	<style>
+		body {
+			font-size:1.2em;
+			text-align:center;
+		}
+
+		p {
+			color: red;
+			font-weight: 500;
+		}
+	</style>
+</head>
+<body>
+	<h2>3의 배수 찾기</h2>
+
+	<script>
+		var scanner = prompt("몇까지 3의 배수를 받을까?");
+		var Num;
+		var arrNum = [];
+		var count = null;
+		for(var i = 1; i < scanner; i++){
+			
+			if(i % 3 === 0){ 
+				document.write(`${i}, `);
+				count++;
+			}
+			
+		}
+		document.write("<br>");
+		document.write("<br>");
+		if(count !== null){
+			document.write(`<p> 50까지의 3의 배수의 개수 : ${count} </p>`);
+		}
+		
+		
+	</script>
+</body>
+</html>
