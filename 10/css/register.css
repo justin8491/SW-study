@@ -45,3 +45,16 @@ body {
 	margin: auto;
 	padding: 7px 25px;
 }
+
+#signup > fieldset > ul > li > label {
+	display: inline-block;
+	float: left;
+	width: 120px;
+}
+
+/* .signup_label{
+	display: inline-block;
+	float: left;
+	width: 120px;
+} */
+
