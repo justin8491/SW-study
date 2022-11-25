@@ -6,7 +6,7 @@
 	<title>DOM event 객체</title>
   <style>
     #container {
-      width:300px;
+      width:100%;
       margin:10px auto;
     }
   </style>
@@ -16,15 +16,19 @@
 		<img src="images/easys-1.jpg" id="cover">	
   </div>
   
-	<script>
+	<script defer>
 		var cover = document.getElementById("cover");
+    var body = document.getElementsByTagName('body');
+
 		cover.addEventListener("mouseover",function() {
       cover.src = "images/easys-2.jpg";
     });
 
     cover.addEventListener("mouseout", function() {
       cover.src = "images/easys-1.jpg";
-    });  
+    });
+    
+    
 	</script>
 </body>
 </html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      span {
+        color: blue;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button id="start">현재 시간 보기</button>
+      <p>현재 시각 <span id="current">오전 10:18</span></p>
+    </div>
+    <input id="reload" type="button" value="새로고침" />
+    <input id="stop" type="button" value="멈춤" />
+    <script>
+      var start = document.querySelector('#start');
+      var reload = document.querySelector("#reload");
+      var current = document.querySelector("#current");
+      var stop = document.querySelector("#stop");
+
+      reload.onclick = () => {
+        let now = new Date();
+        current.innerText = now.toLocaleTimeString();
+      };
+      // 시스템에서 주기적으로 발생하는 이벤트
+      // 1. setTimeout : (처리함수, 시간): 1회만 반복
+      // 2. setInterval : (처리함수, 시간): 반복
+
+      printTime = () => {
+        let now = new Date(Date());
+        current.innerText = now.toLocaleTimeString();
+      };
+
+      let intervalId = printTime(setInterval, 1000);
+
+      setInterval(() => {
+        let now = new Date(Date());
+        current.innerText = now.toLocaleTimeString();
+      }, 1000);
+
+      stop.onclick = () => {
+        clearInterval(intervalId);
+      };
+      //////////////////////////////////////////
+      var left = (screen.availWidth - screen.width) / 2;
+      var top = (screen.availHeight - screen.height) / 2;
+
+      start.onclick = () => {
+        window.open("timer2.html", "pop", `width=${left}, height=${top}`);
+      }
+      
+    </script>
+  </body>
+</html>

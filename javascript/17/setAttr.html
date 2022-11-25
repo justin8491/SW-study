@@ -13,9 +13,9 @@
 		<div id="prod-pic">
 			<img src="images/coffee-pink.jpg" alt="에디오피아 게뎁" id="cup" width="200" height="200">
 			<div id="small-pic"> 
-				<img src="images/coffee-pink.jpg" class="small">
-				<img src="images/coffee-blue.jpg" class="small">
-				<img src="images/coffee-gray.jpg" class="small">
+				<img src="images/coffee-pink.jpg" class="small" onmouseover="changePic(this)">
+				<img src="images/coffee-blue.jpg" class="small" onmouseover="changePic(this)">
+				<img src="images/coffee-gray.jpg" class="small" onmouseover="changePic(this)">
 	 	  </div>
 		</div>			
 		<div id="desc">
@@ -56,10 +56,14 @@
       smallPics[i].addEventListener("click", changePic);
     }
 
-    function changePic() {
+    function changePic(img) {
       var newPic = this.src;
       cup.setAttribute("src", newPic);
-    }			
+    }
+	
+	function changePic2(src) {
+      cup.setAttribute("src", src);
+    }
 	</script>
 </body>
 </html>

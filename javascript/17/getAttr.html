@@ -13,9 +13,9 @@
 		<div id="prod-pic">
 			<img src="images/coffee-pink.jpg" alt="에디오피아 게뎁" id="cup" width="200" height="200" onclick="displaySrc()">
 				<div id="small-pic"> 
-					<img src="images/coffee-pink.jpg" class="small">
-					<img src="images/coffee-blue.jpg" class="small">
-					<img src="images/coffee-gray.jpg" class="small">
+					<img src="images/coffee-pink.jpg" class="small" onmouseover="">
+					<img src="images/coffee-blue.jpg" class="small" onmouseover="">
+					<img src="images/coffee-gray.jpg" class="small" onmouseover="">
 				</div>
 		</div>			
 		<div id="desc">
@@ -52,7 +52,9 @@
 		function displaySrc() {
 			var cup = document.querySelector("#cup");
 			alert("이미지 소스 : " + cup.getAttribute("src"));
-		}	
+		}
+		
+		
 	</script>
 </body>
 </html>

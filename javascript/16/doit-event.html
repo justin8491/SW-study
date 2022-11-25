@@ -18,7 +18,14 @@
   <div id="container">
     <h1>이벤트 공지</h1>
     <img src="images/doit.jpg">
-    <p><a href="doit-main.html">자세히 보기</a></p>  
+    <p><a id="link" href="doit-main.html">자세히 보기</a></p>  
   </div>
 </body>
+<script>
+  var link = document.querySelector('#link');
+
+  link.onclick = () => {
+    alert("popup");
+  }
+</script>
 </html>

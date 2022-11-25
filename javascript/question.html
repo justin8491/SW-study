@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>계산기?</title>
+    <style>
+
+        #display {
+            width: 500px;
+            margin: 20% 100px;
+            display: block;
+            height: 100px;
+            font-size: 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <div>
+        <input type="text" name="display" id="display" />
+    </div>
+  </body>
+  <script>
+    var display = document.querySelector('#display');
+
+    display.addEventListener("keydown", (event) => {
+        //preventDefault();
+        var temp;
+        console.log(event.key);
+        if(event.key === "Delete"){
+            display.value = "";
+            
+        } else if(event.key === "Backspace"){
+            temp = display.value;
+            temp = temp.length - 1
+            display.value = temp;
+        }
+    }, false);
+  </script>
+</html>
