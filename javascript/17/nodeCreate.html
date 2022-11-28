@@ -1,51 +1,56 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Web Programming</title>
-	<link rel="stylesheet" href="css/nodelist.css">
-</head>
-<body>
-  <div id="container">
-    <h1>Web Programming</h1>
-    <p>공부할 주제를 기록해 보세요</p>
-    <form onsubmit="return false">
-      <input type="text" id="subject" autofocus >
-      <button id="btn">추가</button>
-    </form>
-    <hr>  
-    <ul id="itemList"></ul>  
-  </div>
-</body>
-<script>
-  //id 값 가져오기
-  var itemList = document.getElementById('itemList');
-  var btn = document.getElementById('btn');
-  var form = document.getElementsByTagName('form');
-  var subject = document.getElementById('subject');
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Programming</title>
+    <link rel="stylesheet" href="css/nodelist.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h1>Web Programming</h1>
+      <p>공부할 주제를 기록해 보세요</p>
+      <form onsubmit="return false">
+        <input type="text" id="subject" autofocus />
+        <button id="btn">추가</button>
+      </form>
+      <hr />
+      <ul id="itemList"></ul>
+    </div>
+  </body>
+  <script>
+    //id 값 가져오기
+    var itemList = document.getElementById("itemList");
+    var btn = document.getElementById("btn");
+    var form = document.getElementsByTagName("form");
+    var subject = document.getElementById("subject");
 
-  var todo;
-  
-  //만들 태그 생성
-  var newLi = document.createElement('li');
-  var newBtn = document.createElement('button');
+    var todo;
 
-  var liList = [];
+    //만들 태그 생성
+    var newLi = document.createElement("li");
+    var newBtn = document.createElement("button");
 
-  var insertTodo = btn.addEventListener('onclick', (event) => {
+    var liList = [];
+
+    btn.onclick = () => {
+      newLi.innerText = subject.value;
+      let ulList = +itemList.appendChild(newLi);
+    };
+
+    var insertTodo = btn.addEventListener("onclick", (event) => {
       console.log("btn 클릭");
       newLi.innerText = subject.value;
-      let ulList =+ itemList.appendChild(newLi);
-    // if(event.charCode == '\n'){
-    //   newLi.innerText = subject.value;
-    //   let ulList =+ itemList.appendChild(newLi);
-      
-    //   event.preventDefault();
-    //   return false;
-    // }
-  })
-  
-  //newLi.value = 
-</script>
+      itemList.appendChild(newLi);
+      // if(event.charCode == '\n'){
+      //   newLi.innerText = subject.value;
+      //   let ulList =+ itemList.appendChild(newLi);
+
+      //   event.preventDefault();
+      //   return false;
+      // }
+    });
+
+    //newLi.value =
+  </script>
 </html>
